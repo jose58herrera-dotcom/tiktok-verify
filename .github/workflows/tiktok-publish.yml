@@ -15,18 +15,18 @@ jobs:
             -H "Content-Type: application/json; charset=UTF-8" \
             -d '{
               "post_info": {
-                "description": "📍 Elephant Sanctuary, Chiang Mai 🇹🇭\n\n#expectationvreality #expectationvsreality #expectativavsrealidad #elephantsanctuary #chiangmai"
+                "title": "📍 Angkor Wat, Siem Reap 🇰🇭",
+                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #angkorwat #siemreap"
               },
               "source_info": {
                 "source": "PULL_FROM_URL",
                 "photo_cover_index": 0,
                 "photo_images": [
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_01.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_02.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_03.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_04.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_05.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/chiangmai_06.jpg"
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_01.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_02.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_03.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_04.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_05.jpg"
                 ]
               },
               "post_mode": "MEDIA_UPLOAD",
