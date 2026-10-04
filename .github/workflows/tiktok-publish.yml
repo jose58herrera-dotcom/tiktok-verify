@@ -15,17 +15,18 @@ jobs:
             -H "Content-Type: application/json; charset=UTF-8" \
             -d '{
               "post_info": {
-                "title": "📍 Pub Street, Siem Reap 🇰🇭",
-                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #pubstreet #siemreap"
+                "title": "📍 Kampong Phluk, Siem Reap 🇰🇭",
+                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #kampongphluk #siemreap"
               },
               "source_info": {
                 "source": "PULL_FROM_URL",
                 "photo_cover_index": 0,
                 "photo_images": [
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/pubstreet_01.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/pubstreet_02.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/pubstreet_03.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/pubstreet_04.jpg"
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_01.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_02.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_03.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_04.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_05.jpg"
                 ]
               },
               "post_mode": "MEDIA_UPLOAD",
