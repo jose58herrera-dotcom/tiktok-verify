@@ -1,0 +1,26 @@
+name: TikTok Status Check
+on:
+  workflow_dispatch:
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check publish status for all 4 posts
+        env:
+          TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
+        run: |
+          for pid in "p_inbox_url~v2.7692656444549875732" "p_inbox_url~v2.7692657613514934324" "p_inbox_url~v2.7692659734805088263" "p_inbox_url~v2.7692660656335783937"; do
+            echo "=== Checking $pid ==="
+            curl -sS -X POST "https://open.tiktokapis.com/v2/post/publish/status/fetch/" \
+              -H "Authorization: Bearer $TIKTOK_ACCESS_TOKEN" \
+              -H "Content-Type: application/json; charset=UTF-8" \
+              -d "{\"publish_id\": \"$pid\"}" \
+              -w "\nHTTP_STATUS:%{http_code}\n"
+            echo ""
+          done
+          echo "=== Creator info (account context) ==="
+          curl -sS -X POST "https://open.tiktokapis.com/v2/post/publish/creator_info/query/" \
+            -H "Authorization: Bearer $TIKTOK_ACCESS_TOKEN" \
+            -H "Content-Type: application/json; charset=UTF-8" \
+            -w "\nHTTP_STATUS:%{http_code}\n"
