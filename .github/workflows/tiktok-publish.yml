@@ -15,18 +15,17 @@ jobs:
             -H "Content-Type: application/json; charset=UTF-8" \
             -d '{
               "post_info": {
-                "title": "📍 Angkor Wat, Siem Reap 🇰🇭",
-                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #angkorwat #siemreap"
+                "title": "📍 Ta Prohm, Siem Reap 🇰🇭",
+                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #taprohm #siemreap"
               },
               "source_info": {
                 "source": "PULL_FROM_URL",
                 "photo_cover_index": 0,
                 "photo_images": [
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_01.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_02.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_03.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_04.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_05.jpg"
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/taprohm_01.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/taprohm_02.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/taprohm_03.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/taprohm_04.jpg"
                 ]
               },
               "post_mode": "MEDIA_UPLOAD",
