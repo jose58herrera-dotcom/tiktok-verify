@@ -6,7 +6,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Call TikTok Content Posting API
+      - name: Call TikTok Content Posting API and check status
         env:
           TIKTOK_ACCESS_TOKEN: ${{ secrets.TIKTOK_ACCESS_TOKEN }}
         run: |
@@ -15,22 +15,32 @@ jobs:
             -H "Content-Type: application/json; charset=UTF-8" \
             -d '{
               "post_info": {
-                "title": "📍 Kampong Phluk, Siem Reap 🇰🇭",
-                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #kampongphluk #siemreap"
+                "title": "📍 Angkor Wat, Siem Reap 🇰🇭",
+                "description": "#expectationvreality #expectationvsreality #expectativavsrealidad #angkorwat #siemreap"
               },
               "source_info": {
                 "source": "PULL_FROM_URL",
                 "photo_cover_index": 0,
                 "photo_images": [
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_01.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_02.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_03.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_04.jpg",
-                  "https://jose58herrera-dotcom.github.io/tiktok-verify/kampongphluk_05.jpg"
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_01.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_02.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_03.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_04.jpg",
+                  "https://jose58herrera-dotcom.github.io/tiktok-verify/angkorwat_05.jpg"
                 ]
               },
               "post_mode": "MEDIA_UPLOAD",
               "media_type": "PHOTO"
             }' -o response.json -w "\nHTTP_STATUS:%{http_code}\n"
-          echo "--- Response ---"
+          echo "--- Init Response ---"
           cat response.json
+          PID=$(python3 -c "import json; print(json.load(open('response.json'))['data']['publish_id'])")
+          echo "publish_id=$PID"
+          echo "Waiting 8s before status check..."
+          sleep 8
+          echo "--- Status Check ---"
+          curl -sS -X POST "https://open.tiktokapis.com/v2/post/publish/status/fetch/" \
+            -H "Authorization: Bearer $TIKTOK_ACCESS_TOKEN" \
+            -H "Content-Type: application/json; charset=UTF-8" \
+            -d "{\"publish_id\": \"$PID\"}" \
+            -w "\nHTTP_STATUS:%{http_code}\n"
